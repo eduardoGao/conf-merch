@@ -20,11 +20,11 @@ function Checkout() {
 
   return (
     <div className='Checkout'>
-      {cart.length == 0 ? <h3>No hay productos 😥</h3> : 
+      {cart.length == 0 ? <h3>No hay productos 😥</h3> :
         <div className="Checkout-content">
           <h3>Lista de pedidos:</h3>
           {cart.map((item, i) => (
-            <div className="Checkout-item">
+            <div className="Checkout-item" key={item.title}>
               <div className="Checkout-element">
                 <h4>{item.title}</h4>
                 <span>{item.price}</span>
@@ -36,9 +36,9 @@ function Checkout() {
           ))}
         </div>
       }
-      
 
-      {cart.length > 0 && 
+
+      {cart.length > 0 &&
         <div className="Checkout-sidebar">
           <h3>{`Precio total: $ ${handleSumTotal()}`}</h3>
           <Link to='/checkout/information'>
@@ -46,7 +46,7 @@ function Checkout() {
           </Link>
         </div>
       }
-      
+
 
     </div>
   )
