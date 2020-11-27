@@ -7,7 +7,7 @@ import Products from '../components/Products'
 function Home() {
   return (
     <div>
-      <Products data={initialState.products} />
+      <Products />
     </div>
   )
 }
