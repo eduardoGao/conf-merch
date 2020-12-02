@@ -1,16 +1,17 @@
 import React, { useContext, useRef } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+// import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import AppContext from '../context/AppContext'
 
 import '../styles/components/Information.css'
 
-function Information() {
+function Information({ history }) {
     const { state, addToBuyer } = useContext(AppContext)
     const { cart } = state
-
-    const history = useHistory()
-
     const form = useRef(null)
+
+    // const history = useHistory()
+
 
     const handleSubmit = () => {
         const formData = new FormData(form.current)
@@ -73,7 +74,6 @@ function Information() {
                             <span>{item.price}</span>
                         </div>
                     ))}
-
                 </div>
             </div>
         </div>
